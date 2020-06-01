@@ -1,0 +1,30 @@
+#!/bin/bash
+
+if [ ! -d /var/spool/avidbots/sysdumps/tcpdump ]; then
+	echo "Creating tcpdump directory..."
+	mkdir -p /var/spool/avidbots/sysdumps/tcpdump
+fi
+
+# Enable the service 
+echo "Installing systemd daemon for ansible"
+systemctl daemon-reload	
+
+if (systemctl -q is-active tcpdump.service) ; then
+ 	echo "Stopping TCP dump service..."
+        systemctl stop tcpdump.service
+fi
+
+if (systemctl -q is-enabled tcpdump.service) ; then
+	echo "Disabling TCP dump service..."
+	systemctl disable tcpdump.service
+fi
+
+echo "Enabling TCP dump service..."
+systemctl enable tcpdump.service
+echo "Starting TCP dump service..."
+systemctl start tcpdump.service
+
+#echo "Enabling logrotate on tcpdump directory..."
+#logrotate /etc/logrotate.d/tcpdump -v
+
+echo "All done!"

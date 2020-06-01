@@ -1,0 +1,9 @@
+Package: tcpdump-service
+Version: 1.0.0
+Section: base
+Priority: required
+Architecture: amd64
+Depends: tcpdump
+Maintainer: Gus de Souza <gustavo.souza@avidbots.com>
+Description:
+  Monitor TCP IP packages

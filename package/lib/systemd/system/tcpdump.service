@@ -1,0 +1,12 @@
+[Unit]
+Description=TCP Dump service
+
+[Service]
+Type=simple
+ExecStart=/bin/bash -c 'exec /usr/sbin/tcpdump.sh'
+After=network-online.target
+Wants=network-online.target
+
+
+[Install]
+WantedBy=multi-user.target

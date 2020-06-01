@@ -1,0 +1,8 @@
+echo 'Removing configuration file...'
+rm /etc/tcpdump.yaml
+
+echo 'Stopping the service...'
+systemctl stop tcpdump.service
+
+echo 'Disabling the service...'
+systemctl disable tcpdump.service

@@ -1,0 +1,9 @@
+tcpdump:
+  # any interface
+  interface: "any"        
+
+  # rotate each 12 hours
+  rotate_seconds: 43200   
+  
+  filecount: 10
+  file: /tmp/tcpdump-%Y-%m-%d-%H-%M.pcap
