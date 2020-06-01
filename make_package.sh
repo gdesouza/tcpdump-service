@@ -1,7 +1,7 @@
 #/bin/bash
 #
 # Make debian package
-# Author: Gus de Souza
+# Author: Gus de Souza <gusdesouza@protonmail.com>
 
 function check_result {
     if [ $? != 0 ]; then
